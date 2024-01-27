@@ -12,6 +12,7 @@ echo -e "$Y $sum $N"
 echo -e "$Y $0 $N"
 echo -e "$Y $@ $N"
 echo -e "$Y $#"
+echo "$timestamp"
 if [ $n1 -gt $n2 ]
 then
     echo -e "$G number1 is greater $N"
