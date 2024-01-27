@@ -9,7 +9,7 @@ sum=$(($n1+$n2))
 echo "$Y $sum $N"
 echo "$Y $0 $N"
 echo "$Y $@ $N"
-echo "$Y $#"
+echo "$Y.... $# $N"
 if [ $n1 -gt $n2 ]
 then
     echo -e "$G number1 is greater $N"
