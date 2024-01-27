@@ -1,21 +1,30 @@
 #!/bin/bash
+ID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 timestamp=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$timestamp.log"
-n1=$1
-n2=$2
-sum=$(($n1+$n2)) &>> $LOGFILE
-echo -e "$Y $sum $N"
 echo -e "$Y $0 $N"
-echo -e "$Y $@ $N"
 echo -e "$Y $#"
-echo "$timestamp"
-if [ $n1 -gt $n2 ]
+echo -e "$timestamp"
+if [ $ID -ne 0 ]
 then
-    echo -e "$G number1 is greater $N"
+   echo -e "$R please run with root user"
+   exit 1
 else
-    echo -e "$R number1 is less $N"
+   echo -e "$G YES YOU R ROOT USER $N"
 fi
+VALIDATE(){
+    if [ $1 -ne 0 ]
+    then
+        echo -e "$2 failed"
+    else
+        echo -e "$2 success"
+    fi
+}
+yum install mysql -y
+VALIDATE $? "INSTALLING MYSQL"
+yum install git -y
+VALIDATE $? "INSTALLING GIT"
