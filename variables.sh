@@ -26,8 +26,18 @@ VALIDATE(){
 }
 for package in $@
 do 
-  yum list installed $package
+ yum list installed $package 
+ if [ $? -ne 0 ]
+ then
+   yum install $package -y
   VALIDATE $? "install it" &>> $LOGFILE
 else
-   echo "it is already installed" &>> $LOGFILE
+  echo "it is already installed" &>> $LOGFILE
+fi
+done
+  
+
+
+ 
+
 
