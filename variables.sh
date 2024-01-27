@@ -32,7 +32,7 @@ do
    yum install $package -y &>> $LOGFILE
   VALIDATE $? "installing $package" 
 else
-  echo -e "it is already installed $Y skip it" 
+  echo -e "$package is already installed $Y skip it" 
 fi
 done
   
