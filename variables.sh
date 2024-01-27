@@ -24,7 +24,10 @@ VALIDATE(){
         echo -e "$2 success"
     fi
 }
-yum install mysql -y
-VALIDATE $? "INSTALLING MYSQL" &>> $LOGFILE
-yum install git -y
-VALIDATE $? "INSTALLING GIT" &>> $LOGFILE
+for package in $@
+do 
+  yum list installed $package
+  VALIDATE $? "install it" &>> $LOGFILE
+else
+   echo "it is already installed" &>> $LOGFILE
+
