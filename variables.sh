@@ -9,7 +9,7 @@ LOGFILE="/tmp/$0-$TIMESTAMP.log"
 echo -e "$Y $0 $N"
 echo -e "$Y $#"
 echo -e "$TIMESTAMP"
-packages=[mysql,git,postfix]
+packages=("mysql" "git" "postfix")
 if [ $ID -ne 0 ]
 then
    echo -e "$R please run with root user"
