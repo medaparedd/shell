@@ -9,6 +9,7 @@ LOGFILE="/tmp/$0-$TIMESTAMP.log"
 echo -e "$Y $0 $N"
 echo -e "$Y $#"
 echo -e "$TIMESTAMP"
+packages=[mysql,git,postfix]
 if [ $ID -ne 0 ]
 then
    echo -e "$R please run with root user"
@@ -24,15 +25,15 @@ VALIDATE(){
         echo -e "$2 success"
     fi
 }
-for package in $@
+for i in $packages
 do 
- yum list installed $package 
+ yum list installed $i
  if [ $? -ne 0 ]
  then
-   yum install $package -y &>> $LOGFILE
+   yum install $i -y &>> $LOGFILE
   
 else
-  echo -e "$package is already installed $Y skip it" 
+  echo -e "$i is already installed $Y skip it" 
 fi
 done
   
