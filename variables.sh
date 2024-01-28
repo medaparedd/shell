@@ -27,7 +27,7 @@ VALIDATE(){
 }
 for i in $packages
 do 
- yum list installed $i
+ yum list installed $packages
  if [ $? -ne 0 ]
  then
    yum install $i -y &>> $LOGFILE
