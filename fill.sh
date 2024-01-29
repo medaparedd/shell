@@ -30,6 +30,6 @@ VALIDATE(){
 }
 
 echo -e "$Y enter the package name you want to install"
-read $package_name
-yum install $package_name -y
-VALIDATE $? "installing $package_name"
+read $package
+yum install $package -y
+VALIDATE $? "installing package"
