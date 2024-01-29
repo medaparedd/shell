@@ -25,7 +25,7 @@ VALIDATE(){
         echo -e "$2 success"
     fi
 }
-for i in "$(packages[@])"
+for i in $(packages[@])
 do 
  yum list installed $i
  if [ $? -ne 0 ]
