@@ -31,11 +31,5 @@ VALIDATE(){
 
 echo -e "$Y enter the package name you want to install"
 read $package_name
-yum list installed $package_name
-if [ $? -ne 0 ]
-then
-    yum install $package_name -y
-    VALIDATE $? "installing $package_name"
-else
-    echo "$package_name already installed"
-fi
+yum install $package_name -y
+VALIDATE $? "installing $package_name"
