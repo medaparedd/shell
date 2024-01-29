@@ -9,7 +9,7 @@ TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
 echo -e "$G $0"
-echo -e "$R $#"
+echo -e "$G $#"
 
 if [ $ID -ne 0 ]
 then
