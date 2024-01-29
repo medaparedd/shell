@@ -19,7 +19,7 @@ else
     echo -e "$G you are root user, you can go for further process"
 fi
 
-VALIDATE(){
+VALIDATE() {
     if [ $1 -ne 0 ]
     then 
         echo -e "$R $2 failed"
