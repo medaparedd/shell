@@ -19,13 +19,14 @@ else
     echo -e "$G you are root user, you can go for further process"
 fi
 
-VALIDATE() {
+VALIDATE(){
     if [ $1 -ne 0 ]
     then 
         echo -e "$R $2 failed"
         exit 1
     else
         echo -e "$G $2 success"
+    fi
 }
 
 echo -e "$Y enter the package name you want to install"
