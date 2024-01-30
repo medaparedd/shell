@@ -77,10 +77,10 @@ systemctl daemon-reload &>> $LOGFILE
 
 VALIDATE $? "cart daemon reload"
 
-systemctl enable user &>> $LOGFILE
+systemctl enable cart &>> $LOGFILE
 
 VALIDATE $? "Enable cart"
 
-systemctl start user &>> $LOGFILE
+systemctl start cart &>> $LOGFILE
 
 VALIDATE $? "Starting user"
