@@ -32,15 +32,22 @@ dnf module enable nodejs:18 -y
 VALIDATE $? "installed" &>> $LOGFILE
 dnf install nodejs -y
 VALIDATE $? "installed" &>> $LOGFILE
-useradd roboshop
-VALIDATE $? "installed" &>> $LOGFILE
-mkdir /app
+id=roboshop
+if [ $id -ne 0 ]
+then
+    useradd roboshop
+    VALIDATE $? "installed" &>> $LOGFILE
+else
+    echo "its already exists"
+fi
+
+mkdir -p /app
 VALIDATE $? "installed" &>> $LOGFILE
 curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip
 VALIDATE $? "installed" &>> $LOGFILE
 cd /app 
 VALIDATE $? "installed" &>> $LOGFILE
-unzip /tmp/catalogue.zip
+unzip -o /tmp/catalogue.zip
 VALIDATE $? "installed" &>> $LOGFILE
 npm install
 VALIDATE $? "installed" &>> $LOGFILE
