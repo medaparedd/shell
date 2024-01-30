@@ -36,7 +36,7 @@ curl -o /tmp/web.zip https://roboshop-builds.s3.amazonaws.com/web.zip
 VALIDATE $? "installed" &>> $LOGFILE
 cd /usr/share/nginx/html
 VALIDATE $? "installed" &>> $LOGFILE
-unzip /tmp/web.zip
+unzip -o /tmp/web.zip
 VALIDATE $? "installed" &>> $LOGFILE
 cp /home/centos/shell/roboshop.conf /etc/nginx/default.d/roboshop.conf 
 VALIDATE $? "installed" &>> $LOGFILE
