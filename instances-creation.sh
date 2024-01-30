@@ -7,7 +7,7 @@ subnet_id=subnet-02f930c84fb2f785d
 
 instances=("mongodb" "cart" "user" "redis" "catalogue" "rabbitmq" "payment" "shipping" "mysql" "web")
 
-for i in $instances[@]
+for i in $(instances[@])
 do
   if [ $i == mongodb ] || [ $i == shipping ] || [ $i == mysql ]
   then
