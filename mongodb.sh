@@ -24,15 +24,15 @@ VALIDATE(){
         echo -e "$2 success"
     fi
 }
-cp mongo.repo /etc/yum.repos.d/mongo.repo
-VALIDATE $? &>> $LOGFILE
-dnf install mongodb-org -y 
-VALIDATE $? &>> $LOGFILE
-systemctl enable mongod
-VALIDATE $? &>> $LOGFILE
-systemctl start mongod
-VALIDATE $? &>> $LOGFILE
-sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf
-VALIDATE $? &>> $LOGFILE
-systemctl restart mongod
-VALIDATE $? &>> $LOGFILE
+cp mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
+VALIDATE $? 
+dnf install mongodb-org -y &>> $LOGFILE
+VALIDATE $? 
+systemctl enable mongod &>> $LOGFILE
+VALIDATE $? 
+systemctl start mongod &>> $LOGFILE
+VALIDATE $? 
+sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf &>> $LOGFILE
+VALIDATE $? 
+systemctl restart mongod &>> $LOGFILE
+VALIDATE $? 

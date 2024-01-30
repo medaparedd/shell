@@ -24,21 +24,21 @@ VALIDATE(){
         echo -e "$2 success"
     fi
 }
-dnf install nginx -y
-VALIDATE $? "installed" &>> $LOGFILE
-systemctl enable nginx
-VALIDATE $? "installed" &>> $LOGFILE
-systemctl start nginx
-VALIDATE $? "installed" &>> $LOGFILE
-rm -rf /usr/share/nginx/html/*
-VALIDATE $? "installed" &>> $LOGFILE
-curl -o /tmp/web.zip https://roboshop-builds.s3.amazonaws.com/web.zip
-VALIDATE $? "installed" &>> $LOGFILE
-cd /usr/share/nginx/html
-VALIDATE $? "installed" &>> $LOGFILE
-unzip -o /tmp/web.zip
-VALIDATE $? "installed" &>> $LOGFILE
-cp /home/centos/shell/roboshop.conf /etc/nginx/default.d/roboshop.conf 
-VALIDATE $? "installed" &>> $LOGFILE
-systemctl restart nginx 
-VALIDATE $? "installed" &>> $LOGFILE
+dnf install nginx -y &>> $LOGFILE
+VALIDATE $? "installed" 
+systemctl enable nginx &>> $LOGFILE
+VALIDATE $? "installed" 
+systemctl start nginx &>> $LOGFILE
+VALIDATE $? "installed" 
+rm -rf /usr/share/nginx/html/* &>> $LOGFILE
+VALIDATE $? "installed" 
+curl -o /tmp/web.zip https://roboshop-builds.s3.amazonaws.com/web.zip &>> $LOGFILE
+VALIDATE $? "installed" 
+cd /usr/share/nginx/html &>> $LOGFILE
+VALIDATE $? "installed" 
+unzip -o /tmp/web.zip &>> $LOGFILE
+VALIDATE $? "installed" 
+cp /home/centos/shell/roboshop.conf /etc/nginx/default.d/roboshop.conf &>> $LOGFILE
+VALIDATE $? "installed" 
+systemctl restart nginx &>> $LOGFILE
+VALIDATE $? "installed" 

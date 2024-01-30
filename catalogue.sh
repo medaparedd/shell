@@ -26,42 +26,42 @@ VALIDATE(){
     fi
 }
 
-dnf module disable nodejs -y
-VALIDATE $? "installed" &>> $LOGFILE
-dnf module enable nodejs:18 -y
-VALIDATE $? "installed" &>> $LOGFILE
-dnf install nodejs -y
-VALIDATE $? "installed" &>> $LOGFILE
+dnf module disable nodejs -y &>> $LOGFILE
+VALIDATE $? "installed" 
+dnf module enable nodejs:18 -y &>> $LOGFILE
+VALIDATE $? "installed" 
+dnf install nodejs -y &>> $LOGFILE
+VALIDATE $? "installed" 
 id=roboshop
 if [ $id -ne 0 ]
 then
-    useradd roboshop
-    VALIDATE $? "installed" &>> $LOGFILE
+    useradd roboshop &>> $LOGFILE
+    VALIDATE $? "installed" 
 else
     echo "its already exists"
 fi
 
-mkdir -p /app
-VALIDATE $? "installed" &>> $LOGFILE
-curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip
-VALIDATE $? "installed" &>> $LOGFILE
-cd /app 
-VALIDATE $? "installed" &>> $LOGFILE
-unzip -o /tmp/catalogue.zip
-VALIDATE $? "installed" &>> $LOGFILE
-npm install
-VALIDATE $? "installed" &>> $LOGFILE
-cp /home/centos/shell/catalogue.service /etc/systemd/system/catalogue.service
-VALIDATE $? "installed" &>> $LOGFILE
-systemctl daemon-reload
-VALIDATE $? "installed" &>> $LOGFILE
-systemctl enable catalogue
-VALIDATE $? "installed" &>> $LOGFILE
-systemctl start catalogue
-VALIDATE $? "installed" &>> $LOGFILE
-cp /home/centos/shell/mongo.repo /etc/yum.repos.d/mongo.repo
-VALIDATE $? "installed" &>> $LOGFILE
-dnf install mongodb-org-shell -y
-VALIDATE $? "installed" &>> $LOGFILE
-mongo --host mongodb.daws74s.online </app/schema/catalogue.js
-VALIDATE $? "installed" &>> $LOGFILE
+mkdir -p /app &>> $LOGFILE
+VALIDATE $? "installed" 
+curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip &>> $LOGFILE
+VALIDATE $? "installed" 
+cd /app &>> $LOGFILE
+VALIDATE $? "installed"
+unzip -o /tmp/catalogue.zip 
+VALIDATE $? "installed" 
+npm install &>> $LOGFILE
+VALIDATE $? "installed" 
+cp /home/centos/shell/catalogue.service /etc/systemd/system/catalogue.service &>> $LOGFILE
+VALIDATE $? "installed" 
+systemctl daemon-reload &>> $LOGFILE
+VALIDATE $? "installed"  
+systemctl enable catalogue &>> $LOGFILE
+VALIDATE $? "installed" 
+systemctl start catalogue &>> $LOGFILE
+VALIDATE $? "installed" 
+cp /home/centos/shell/mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
+VALIDATE $? "installed" 
+dnf install mongodb-org-shell -y &>> $LOGFILE
+VALIDATE $? "installed" 
+mongo --host mongodb.daws74s.online </app/schema/catalogue.js &>> $LOGFILE
+VALIDATE $? "installed" 
