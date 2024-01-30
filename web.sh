@@ -38,7 +38,7 @@ cd /usr/share/nginx/html
 VALIDATE $? "installed" &>> $LOGFILE
 unzip /tmp/web.zip
 VALIDATE $? "installed" &>> $LOGFILE
-cp roboshop.conf /etc/nginx/default.d/roboshop.conf 
+cp /home/centos/shell/roboshop.conf /etc/nginx/default.d/roboshop.conf 
 VALIDATE $? "installed" &>> $LOGFILE
 systemctl restart nginx 
 VALIDATE $? "installed" &>> $LOGFILE
