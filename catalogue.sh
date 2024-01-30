@@ -44,7 +44,7 @@ unzip /tmp/catalogue.zip
 VALIDATE $? "installed" &>> $LOGFILE
 npm install
 VALIDATE $? "installed" &>> $LOGFILE
-cp catalogue.service /etc/systemd/system/catalogue.service
+cp /home/centos/shell/catalogue.service /etc/systemd/system/catalogue.service
 VALIDATE $? "installed" &>> $LOGFILE
 systemctl daemon-reload
 VALIDATE $? "installed" &>> $LOGFILE
@@ -52,7 +52,7 @@ systemctl enable catalogue
 VALIDATE $? "installed" &>> $LOGFILE
 systemctl start catalogue
 VALIDATE $? "installed" &>> $LOGFILE
-cp mongo.repo /etc/yum.repos.d/mongo.repo
+cp /home/centos/shell/mongo.repo /etc/yum.repos.d/mongo.repo
 VALIDATE $? "installed" &>> $LOGFILE
 dnf install mongodb-org-shell -y
 VALIDATE $? "installed" &>> $LOGFILE
