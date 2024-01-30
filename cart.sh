@@ -69,7 +69,7 @@ npm install  &>> $LOGFILE
 
 VALIDATE $? "Installing dependencies"
 
-cp /home/centos/roboshop-shell/cart.service /etc/systemd/system/cart.service
+cp /home/centos/shell/cart.service /etc/systemd/system/cart.service
 
 VALIDATE $? "Copying cart service file"
 
