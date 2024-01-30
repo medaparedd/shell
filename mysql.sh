@@ -41,5 +41,4 @@ systemctl start mysqld &>> $LOGFILE
 VALIDATE $? "installed"
 mysql_secure_installation --set-root-pass RoboShop@1 &>> $LOGFILE
 VALIDATE $? "installed"
-mysql -uroot -pRoboShop@1 &>> $LOGFILE
-VALIDATE $? "installed"
+
