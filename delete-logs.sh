@@ -31,3 +31,4 @@ do
 done <<< $FILES_TO_DELETE
 else
    "tar -xzvf (*.log)"
+fi
