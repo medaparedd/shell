@@ -30,4 +30,4 @@ do
    rm -rf $line
 done <<< $FILES_TO_DELETE
 else
-   tar -xzvf (*.log)
+   "tar -xzvf (*.log)"
