@@ -19,7 +19,7 @@ fi
 cd /$SOURCE_DIR/
 echo "do you want to delete it or archieve it"
 read $option
-if [ i == $option  ]
+if [ $option == 1  ]
 then
 
 FILES_TO_DELETE=$(find .  -type f -mtime +14 -name "*.log")
@@ -30,5 +30,5 @@ do
    rm -rf $line
 done <<< $FILES_TO_DELETE
 else
-   echo"archieve it"
+   echo "archieve it"
 fi
