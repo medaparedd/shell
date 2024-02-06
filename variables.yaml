@@ -6,6 +6,8 @@
    profession: Devops engineer
   tasks: 
   - name: variables declaration
+    vars:
+     name: jyothi
     ansible.builtin.debug:
      msg: "{{name}}, {{age}}, {{profession}}"
           
