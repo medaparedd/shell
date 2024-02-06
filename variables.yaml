@@ -1,9 +1,11 @@
 - name: variables declaration
   hosts: localhost
+  vars: 
+   skills: 
+    - devops
+    - mysql
   tasks: 
   - name: variables declaration
     ansible.builtin.debug:
-    skills: "{{item}}"
-    - devops
-    - mysql
+     msg: "{{skills}}"
           
