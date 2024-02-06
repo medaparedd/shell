@@ -3,10 +3,12 @@
   vars:
    name: sudha
    age: 24
-  vars_files:
-  - varis.yaml
+  vars_prompt:
+   name: enter your username
+   password: enter your password
+   private: false
   tasks: 
   - name: variables declaration
     ansible.builtin.debug:
-     msg: "{{name}}, {{age}}, {{profession}}"
+     msg: "{{name}}, {{password}}"
           
