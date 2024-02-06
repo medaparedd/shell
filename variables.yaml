@@ -1,17 +1,13 @@
 - name: variables declaration
   hosts: localhost
-  vars: 
-   skills: 
-    - devops
-    - mysql
-   experience:
-    devops: 1
-    mysql: 2
-  tasks: 
-  - name: variables declaration
-    ansible.builtin.debug:
-     msg: "{{skills}}"
-  - name: variables declaration
-    ansible.builtin.debug:
-     msg: "{{experience}}"
+  become: yes
+  loop:
+  - git
+  - mysql
+  - postfix
+  tasks:
+  -name: install packages
+   ansible.builtin.package:
+    name: "{{item}}"
+    state: present
           
