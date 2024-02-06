@@ -1,5 +1,5 @@
 - name: variables declaration
-  hosts: local host
+  hosts: localhost
   vars:
    name: sudha
    age: 24
