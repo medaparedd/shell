@@ -10,5 +10,6 @@
   tasks: 
   - name: variables declaration
     ansible.builtin.debug:
-     msg: "{{skills}}" {{experience}}"
+     msg: "{{skills}}"
+     msg: "{{experience}}"
           
