@@ -4,8 +4,11 @@
    skills: 
     - devops
     - mysql
+   experience:
+    devops: 1
+    mysql: 2
   tasks: 
   - name: variables declaration
     ansible.builtin.debug:
-     msg: "{{skills}}"
+     msg: "{{skills}}", {{experience}}"
           
