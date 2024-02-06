@@ -3,5 +3,7 @@
   tasks: 
   - name: variables declaration
     ansible.builtin.debug:
-     msg: "{{name}}, {{password}}"
+    skills:
+    - devops
+    - mysql
           
