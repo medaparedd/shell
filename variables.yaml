@@ -3,6 +3,9 @@
   vars:
    name: sudha
    age: 24
+  vars_files:
+  - varis.yaml
+
    profession: Devops engineer
   tasks: 
   - name: variables declaration
