@@ -9,7 +9,7 @@
     private: false
 
   - name: password
-      prompt: What is your password?
+    prompt: What is your password?
    
    
   tasks: 
