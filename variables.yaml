@@ -6,8 +6,8 @@
   - mysql
   - postfix
   tasks:
-  -name: install packages
-   ansible.builtin.package:
-    name: "{{item}}"
-    state: present
+  - name: install packages
+    ansible.builtin.package:
+     name: "{{item}}"
+     state: present
           
