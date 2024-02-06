@@ -5,10 +5,10 @@
    age: 24
   vars_prompt:
   - name: username
-      prompt: What is your username?
-      private: false
+    prompt: What is your username?
+    private: false
 
-    - name: password
+  - name: password
       prompt: What is your password?
    
    
