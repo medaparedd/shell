@@ -1,17 +1,5 @@
 - name: variables declaration
   hosts: localhost
-  vars:
-   name: sudha
-   age: 24
-  vars_prompt:
-  - name: username
-    prompt: What is your username?
-    private: false
-
-  - name: password
-    prompt: What is your password?
-   
-   
   tasks: 
   - name: variables declaration
     ansible.builtin.debug:
