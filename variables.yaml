@@ -1,13 +1,14 @@
 - name: variables declaration
   hosts: localhost
   become: yes
-  loop:
-  - git
-  - mysql
-  - postfix
+  
   tasks:
   - name: install packages
     ansible.builtin.package:
      name: "{{item}}"
      state: present
-          
+
+    loop:
+    - git
+    - mysql
+    - postfix     
