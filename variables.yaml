@@ -3,7 +3,7 @@
   tasks: 
   - name: variables declaration
     ansible.builtin.debug:
-    skills:
+    skills: "{{item}}"
     - devops
     - mysql
           
