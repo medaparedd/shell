@@ -7,5 +7,5 @@
   tasks: 
   - name: variables declaration
     ansible.builtin.debug:
-     msg: - {{name}}
-          - {{age}}
+     msg: "{{name}}, {{age}}, {{profession}}"
+          
