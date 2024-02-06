@@ -1,3 +1,6 @@
+[localhost]
+localhost
+
 [localhost:vars]
-name=sudha
-password=12345
+name="sudha"
+password="12345"
