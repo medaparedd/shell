@@ -1,6 +1,8 @@
-[localhost]
-localhost
+[web]
+web.daws74s.online
 
-[localhost:vars]
-name="sudha"
-password="12345"
+[catalogue]
+catalogue.daws74s.online
+
+[mongodb]
+mongodb.daws74s.online
