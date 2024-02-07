@@ -5,10 +5,10 @@
   tasks:
   - name: install packages
     ansible.builtin.package:
-     name: "{{item}}"
-     state: present
+     name: "{{name.item}}"
+     state: "{{state.item}}"
 
     loop:
-    - git
-    - mysql
-    - postfix     
+    - {name: 'git', state: 'present'}
+    - {name: 'mysql', state: 'present'}
+    - {name: 'postfix', state: 'present'}
