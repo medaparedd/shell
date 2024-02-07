@@ -19,7 +19,7 @@
      state: absent
 
   - name: download the content
-    ansible.builtib.get_url:
+    ansible.builtin.get_url:
      src: https://roboshop-builds.s3.amazonaws.com/web.zip
      dest: /tmp
 
