@@ -10,9 +10,9 @@
   - name: run nginx
     ansible.builtin.service:
      name: nginx
-     state: started
      enabled: yes
-
+     state: started
+     
   - name: Remove file (delete file)
     ansible.builtin.file:
      path: /usr/share/nginx/html/*
