@@ -1,5 +1,5 @@
 - name: install catalogue
-  hosts: localhost
+  hosts: catalogue
   become: yes
   tasks:
   - name: enable and disable nodejs
