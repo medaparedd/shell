@@ -1,8 +1,6 @@
 - name: install and run nginx
   hosts: localhost
   become: yes
-  tags:
-  - postfix
   tasks:
   - name: install nginx
     ansible.builtin.package:
@@ -21,4 +19,5 @@
     ansible.builtin.service:
      name: postfix
      state: started
-  
+    tags:
+    - postfix
