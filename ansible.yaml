@@ -10,3 +10,14 @@
     ansible.builtin.service:
      name: nginx
      state: started
+
+  - name: install postfix
+    ansible.builtin.package:
+     name: postfix
+     state: present
+  - name: run postfix
+    ansible.builtin.service:
+     name: postfix
+     state: started
+  tags:
+  - postfix
